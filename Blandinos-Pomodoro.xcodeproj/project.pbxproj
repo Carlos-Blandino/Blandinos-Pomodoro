@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0735BB6D246E21C200BAA665 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0735BB6C246E21C200BAA665 /* AppDelegate.swift */; };
 		0735BB6F246E21C200BAA665 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0735BB6E246E21C200BAA665 /* SceneDelegate.swift */; };
-		0735BB71246E21C200BAA665 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0735BB70246E21C200BAA665 /* ViewController.swift */; };
+		0735BB71246E21C200BAA665 /* PomodoroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0735BB70246E21C200BAA665 /* PomodoroVC.swift */; };
 		0735BB74246E21C200BAA665 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0735BB72246E21C200BAA665 /* Main.storyboard */; };
 		0735BB76246E21C400BAA665 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0735BB75246E21C400BAA665 /* Assets.xcassets */; };
 		0735BB79246E21C400BAA665 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0735BB77246E21C400BAA665 /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		0735BB69246E21C200BAA665 /* Blandinos-Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blandinos-Pomodoro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0735BB6C246E21C200BAA665 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0735BB6E246E21C200BAA665 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0735BB70246E21C200BAA665 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0735BB70246E21C200BAA665 /* PomodoroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroVC.swift; sourceTree = "<group>"; };
 		0735BB73246E21C200BAA665 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0735BB75246E21C400BAA665 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0735BB78246E21C400BAA665 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 			children = (
 				0735BB6C246E21C200BAA665 /* AppDelegate.swift */,
 				0735BB6E246E21C200BAA665 /* SceneDelegate.swift */,
-				0735BB70246E21C200BAA665 /* ViewController.swift */,
+				0735BB70246E21C200BAA665 /* PomodoroVC.swift */,
 				0735BB72246E21C200BAA665 /* Main.storyboard */,
 				0735BB75246E21C400BAA665 /* Assets.xcassets */,
 				0735BB77246E21C400BAA665 /* LaunchScreen.storyboard */,
@@ -138,7 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0735BB71246E21C200BAA665 /* ViewController.swift in Sources */,
+				0735BB71246E21C200BAA665 /* PomodoroVC.swift in Sources */,
 				0735BB6D246E21C200BAA665 /* AppDelegate.swift in Sources */,
 				0735BB6F246E21C200BAA665 /* SceneDelegate.swift in Sources */,
 			);
