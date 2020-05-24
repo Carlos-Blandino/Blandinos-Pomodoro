@@ -1,58 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MkL-i2-bJh">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--PomodoroVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Blandinos_Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PomodoroVC" customModule="Blandinos_Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goforward" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="LbB-ke-zrU" userLabel="backgroundImageView">
-                                <rect key="frame" x="0.0" y="-1.5" width="375" height="668"/>
+                                <rect key="frame" x="0.0" y="-1" width="414" height="736.66666666666663"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="0.52632705479452058" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWQ-K5-bEb">
+                            <button opaque="NO" tag="1" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWQ-K5-bEb" userLabel="timerOneButton">
                                 <rect key="frame" x="53" y="245.5" width="110" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="45" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="25" backgroundImage="alarm" catalog="system"/>
+                                <connections>
+                                    <action selector="promodoroPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XsB-aU-wbw"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Dc-9k-rnF">
+                            <button opaque="NO" tag="2" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Dc-9k-rnF" userLabel="timerTwoButton">
                                 <rect key="frame" x="200" y="246.5" width="110" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <color key="tintColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="44" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="25" backgroundImage="alarm" catalog="system"/>
+                                <connections>
+                                    <action selector="promodoroPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tsu-vy-Twh"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXc-j3-tcJ">
+                            <button opaque="NO" tag="3" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXc-j3-tcJ" userLabel="timerThreeButton">
                                 <rect key="frame" x="47" y="362.5" width="110" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <color key="tintColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="45" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="25" backgroundImage="alarm" catalog="system"/>
+                                <connections>
+                                    <action selector="promodoroPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="unC-hD-dZx"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xOU-MI-OwS">
+                            <button opaque="NO" tag="4" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xOU-MI-OwS" userLabel="timerFourButton">
                                 <rect key="frame" x="205" y="362.5" width="110" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <color key="tintColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="45" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="25" backgroundImage="alarm" catalog="system"/>
+                                <connections>
+                                    <action selector="promodoroPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5A8-ta-hDt"/>
+                                </connections>
                             </button>
-                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fLL-hj-OTe">
+                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fLL-hj-OTe" userLabel="breakTimeView">
                                 <rect key="frame" x="39" y="505" width="320" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -91,8 +103,11 @@
                                 <state key="normal" title="Start Break">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="breakTimePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qh3-9d-847"/>
+                                </connections>
                             </button>
-                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yX7-bS-aiA">
+                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yX7-bS-aiA" userLabel="titleView">
                                 <rect key="frame" x="27" y="36" width="320" height="91"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -118,10 +133,82 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="breakTimeLabel" destination="aWf-QM-AMS" id="s9P-G0-Awc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.25" y="115"/>
+            <point key="canvasLocation" x="130" y="25"/>
+        </scene>
+        <!--SettingsVC-->
+        <scene sceneID="qqo-T5-Nb2">
+            <objects>
+                <viewController id="MkL-i2-bJh" customClass="SettingsVC" customModule="Blandinos_Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k3X-GK-ae2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goforward" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kMU-xL-Y1a" userLabel="backgroundImageView">
+                                <rect key="frame" x="0.0" y="-1" width="414" height="736.66666666666663"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="0.52632705479999997" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="byv-BJ-p7f">
+                                <rect key="frame" x="54" y="625" width="307" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="lunchTimeChange:" destination="MkL-i2-bJh" eventType="valueChanged" id="dYJ-jd-FU5"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="20" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="ggS-8A-age">
+                                <rect key="frame" x="54" y="518" width="318" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="workTimeChange:" destination="MkL-i2-bJh" eventType="valueChanged" id="kQZ-dw-cgi"/>
+                                </connections>
+                            </slider>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter First Name: " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vTj-bT-jlV">
+                                <rect key="frame" x="119" y="225" width="183" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set Your  Pomodoro Timers" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOE-KD-hBf" userLabel="Blandino's  Pomodoro Timers">
+                                <rect key="frame" x="56" y="33" width="303" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Galvji-Bold" family="Galvji" pointSize="33"/>
+                                <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="5" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="z97-wc-eOO">
+                                <rect key="frame" x="54" y="571" width="318" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="breakTimeChange:" destination="MkL-i2-bJh" eventType="valueChanged" id="3v7-RV-IZM"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="kMU-xL-Y1a" firstAttribute="top" secondItem="k3X-GK-ae2" secondAttribute="top" id="I7g-Vc-whI"/>
+                            <constraint firstAttribute="trailing" secondItem="kMU-xL-Y1a" secondAttribute="trailing" id="IcC-lk-eUZ"/>
+                            <constraint firstItem="2oF-BH-K9f" firstAttribute="bottom" secondItem="kMU-xL-Y1a" secondAttribute="bottom" id="Q2s-sn-ses"/>
+                            <constraint firstItem="kMU-xL-Y1a" firstAttribute="leading" secondItem="2oF-BH-K9f" secondAttribute="leading" id="xs9-E0-iKd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2oF-BH-K9f"/>
+                    </view>
+                    <connections>
+                        <outlet property="breakTimeSlider" destination="z97-wc-eOO" id="CsX-0M-LDh"/>
+                        <outlet property="lunchTimeSlider" destination="byv-BJ-p7f" id="8Lq-cx-TaG"/>
+                        <outlet property="workTimeSlider" destination="ggS-8A-age" id="EVQ-iD-4D6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yhU-1v-zYn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-755.07246376811599" y="23.64130434782609"/>
         </scene>
     </scenes>
     <resources>
