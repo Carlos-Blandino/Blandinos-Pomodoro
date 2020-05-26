@@ -49,22 +49,22 @@ class SettingsVC: UIViewController {
     
     @IBAction func workTimeChange(_ sender: UISlider) {
         //String(format: "%.2f", workTimeSlider.value) to have 2 decimal places but for now we use none
-        workTimeFourLabel.text = "\(Int(workTimeFourSlider.value)) Min."
-        workTimeThreeLabel.text = "\(Int(workTimeThreeSlider.value)) Min."
-        workTimeTwoLabel.text = "\(Int(workTimeTwoSlider.value)) Min."
-        workTimeOneLabel.text = "\(Int(workTimeOneSlider.value)) Min."
+        workTimeFourLabel.text = "\(Int(workTimeFourSlider.value))"
+        workTimeThreeLabel.text = "\(Int(workTimeThreeSlider.value))"
+        workTimeTwoLabel.text = "\(Int(workTimeTwoSlider.value))"
+        workTimeOneLabel.text = "\(Int(workTimeOneSlider.value))"
     }
     
     
     
     @IBAction func breakTimeChange(_ sender: UISlider) {
-        breakThreeTimeLabel.text = "\(Int(breakThreeTimeSlider.value)) Min."
-        breakTwoTimeLabel.text = "\(Int(breakTwoTimeSlider.value)) Min."
-     breakOneTimeLabel.text = "\(Int(breakOneTimeSlider.value)) Min."
+        breakThreeTimeLabel.text = "\(Int(breakThreeTimeSlider.value))"
+        breakTwoTimeLabel.text = "\(Int(breakTwoTimeSlider.value))"
+     breakOneTimeLabel.text = "\(Int(breakOneTimeSlider.value))"
     }
     
     @IBAction func lunchTimeChange(_ sender: UISlider) {
-        lunchTimeLabel.text =  "\(Int(lunchTimeSlider.value)) Min."
+        lunchTimeLabel.text =  "\(Int(lunchTimeSlider.value))"
     }
     /*
     // MARK: - Navigation
@@ -77,9 +77,26 @@ class SettingsVC: UIViewController {
     */
 
     @IBAction func doneButtonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "pomodoroVCSeque", sender: self)
+        performSegue(withIdentifier: "pomodoroVCSegue", sender: self)
     }
     @IBAction func unwindFromPomodoroVC(unwindSeque: UIStoryboardSegue){
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "pomodoroVCSegue" {
+            let destinationVC = segue.destination as! PomodoroVC
+            destinationVC.timerOne = workTimeOneLabel.text
+            destinationVC.breakOne = breakOneTimeLabel.text
+            destinationVC.timerTwo = workTimeTwoLabel.text
+            destinationVC.breakTwo = breakTwoTimeLabel.text
+            destinationVC.timerThree = workTimeThreeLabel.text
+            destinationVC.breakThree = breakThreeTimeLabel.text
+            destinationVC.timerFour = workTimeFourLabel.text
+            destinationVC.lunchBreak = lunchTimeLabel.text
+            
+            
+            
+        }
     }
 }

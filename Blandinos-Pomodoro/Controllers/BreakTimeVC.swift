@@ -30,4 +30,7 @@ class BreakTimeVC: UIViewController {
     }
     */
     
+    @IBAction func breaksOverPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
