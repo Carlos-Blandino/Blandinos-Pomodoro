@@ -10,6 +10,9 @@ import UIKit
 
 class SettingsVC: UIViewController {
 
+    @IBOutlet weak var lunchTimeLabel: UILabel!
+    @IBOutlet weak var breakTimeLabel: UILabel!
+    @IBOutlet weak var workTimeLabel: UILabel!
     @IBOutlet weak var lunchTimeSlider: UISlider!
     @IBOutlet weak var breakTimeSlider: UISlider!
     @IBOutlet weak var workTimeSlider: UISlider!
@@ -24,15 +27,16 @@ class SettingsVC: UIViewController {
     
     @IBAction func workTimeChange(_ sender: UISlider) {
         //String(format: "%.2f", workTimeSlider.value) to have 2 decimal places but for now we use none
-        print("Work: ", Int(workTimeSlider.value))
+        workTimeLabel.text = "\(Int(workTimeSlider.value)) Min."
+        
     }
     
     @IBAction func breakTimeChange(_ sender: UISlider) {
-        print("Break: ", Int(breakTimeSlider.value))
+        breakTimeLabel.text = "\(Int(breakTimeSlider.value)) Min."
     }
     
     @IBAction func lunchTimeChange(_ sender: UISlider) {
-        print("Lunch: ", Int(lunchTimeSlider.value))
+        lunchTimeLabel.text =  "\(Int(lunchTimeSlider.value)) Min."
     }
     /*
     // MARK: - Navigation
