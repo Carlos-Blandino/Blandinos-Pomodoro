@@ -48,4 +48,10 @@ class SettingsVC: UIViewController {
     }
     */
 
+    @IBAction func doneButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "pomodoroVCSeque", sender: self)
+    }
+    @IBAction func unwindFromPomodoroVC(unwindSeque: UIStoryboardSegue){
+        
+    }
 }

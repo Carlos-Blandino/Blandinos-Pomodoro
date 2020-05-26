@@ -60,14 +60,38 @@
 			children = (
 				0735BB6C246E21C200BAA665 /* AppDelegate.swift */,
 				0735BB6E246E21C200BAA665 /* SceneDelegate.swift */,
-				0735BB70246E21C200BAA665 /* PomodoroVC.swift */,
-				0735BB72246E21C200BAA665 /* Main.storyboard */,
+				079EE412247CB90A00FDC65A /* Models */,
+				079EE410247CB8B600FDC65A /* Views */,
+				079EE411247CB8E500FDC65A /* Controllers */,
 				0735BB75246E21C400BAA665 /* Assets.xcassets */,
 				0735BB77246E21C400BAA665 /* LaunchScreen.storyboard */,
 				0735BB7A246E21C400BAA665 /* Info.plist */,
-				078CB109247A10200038FB9F /* SettingsVC.swift */,
 			);
 			path = "Blandinos-Pomodoro";
+			sourceTree = "<group>";
+		};
+		079EE410247CB8B600FDC65A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0735BB72246E21C200BAA665 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		079EE411247CB8E500FDC65A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				078CB109247A10200038FB9F /* SettingsVC.swift */,
+				0735BB70246E21C200BAA665 /* PomodoroVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		079EE412247CB90A00FDC65A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
