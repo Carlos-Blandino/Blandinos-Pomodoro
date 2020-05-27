@@ -9,16 +9,44 @@
 import UIKit
 
 class BreakTimeVC: UIViewController {
-
-    @IBOutlet weak var breaksOverLabel: UIButton!
+    var myBreakTimer = TimerBrain()
+    @IBOutlet weak var breaksOverButton: UIButton!
     @IBOutlet weak var breakTimeLabel: UILabel!
-    @IBOutlet weak var breakLabel: UILabel!
+    @IBOutlet weak var breakDescriptionLabel: UILabel!
+    var mainTime = Timer()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        print(myBreakTimer.breakNumber)
+        switch myBreakTimer.breakNumber {
+        case 1:
+            breakDescriptionLabel.text = "First Break:"
+        case 2:
+            breakDescriptionLabel.text = "Second Break:"
+        case 3:
+            breakDescriptionLabel.text = "Third Break:"
+        case 4:
+            breakDescriptionLabel.text = "Lunch Break:"
+        default:
+            break
+        }
+        breaksOverButton.isEnabled = false
+       mainTime = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateWorkTime), userInfo: nil, repeats: true)
+      
+        
         // Do any additional setup after loading the view.
     }
-    
+    @objc func updateWorkTime() {
+        if myBreakTimer.breakTime != 0 {
+             breakTimeLabel.text =  myBreakTimer.timeToString(typeOfTime: "break")
+        } else {
+            breaksOverButton.isEnabled  = true
+
+        mainTime.invalidate()
+        }
+       
+    }
 
     /*
     // MARK: - Navigation
@@ -31,6 +59,7 @@ class BreakTimeVC: UIViewController {
     */
     
     @IBAction func breaksOverPressed(_ sender: UIButton) {
+      
         self.dismiss(animated: true, completion: nil)
     }
 }
