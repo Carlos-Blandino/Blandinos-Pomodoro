@@ -15,6 +15,7 @@
 		0735BB79246E21C400BAA665 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0735BB77246E21C400BAA665 /* LaunchScreen.storyboard */; };
 		078CB10A247A10200038FB9F /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078CB109247A10200038FB9F /* SettingsVC.swift */; };
 		079EE414247D70C800FDC65A /* BreakTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079EE413247D70C800FDC65A /* BreakTimeVC.swift */; };
+		07F08C10247EB614003A5A2D /* TimerBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F08C0F247EB614003A5A2D /* TimerBrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		0735BB7A246E21C400BAA665 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		078CB109247A10200038FB9F /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		079EE413247D70C800FDC65A /* BreakTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakTimeVC.swift; sourceTree = "<group>"; };
+		07F08C0F247EB614003A5A2D /* TimerBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		079EE412247CB90A00FDC65A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				07F08C0F247EB614003A5A2D /* TimerBrain.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			files = (
 				0735BB71246E21C200BAA665 /* PomodoroVC.swift in Sources */,
 				078CB10A247A10200038FB9F /* SettingsVC.swift in Sources */,
+				07F08C10247EB614003A5A2D /* TimerBrain.swift in Sources */,
 				0735BB6D246E21C200BAA665 /* AppDelegate.swift in Sources */,
 				0735BB6F246E21C200BAA665 /* SceneDelegate.swift in Sources */,
 				079EE414247D70C800FDC65A /* BreakTimeVC.swift in Sources */,

@@ -9,7 +9,8 @@
 import UIKit
 
 class SettingsVC: UIViewController {
-
+    var myTimer = TimerBrain()
+    
     @IBOutlet weak var lunchTimeLabel: UILabel!
     
     
@@ -84,18 +85,21 @@ class SettingsVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        myTimer.timerOne = Int(workTimeOneSlider.value)
+        myTimer.breakOne = Int(breakOneTimeSlider.value)
+        
+        myTimer.timerTwo = Int(workTimeTwoSlider.value)
+        myTimer.breakTwo = Int(breakTwoTimeSlider.value)
+        
+        myTimer.timerThree = Int(workTimeThreeSlider.value)
+        myTimer.breakThree = Int(breakThreeTimeSlider.value)
+        
+        myTimer.timerFour = Int(workTimeFourSlider.value)
+        myTimer.lunchBreak = Int(lunchTimeSlider.value)
+        
         if segue.identifier == "pomodoroVCSegue" {
             let destinationVC = segue.destination as! PomodoroVC
-            destinationVC.timerOne = workTimeOneLabel.text
-            destinationVC.breakOne = breakOneTimeLabel.text
-            destinationVC.timerTwo = workTimeTwoLabel.text
-            destinationVC.breakTwo = breakTwoTimeLabel.text
-            destinationVC.timerThree = workTimeThreeLabel.text
-            destinationVC.breakThree = breakThreeTimeLabel.text
-            destinationVC.timerFour = workTimeFourLabel.text
-            destinationVC.lunchBreak = lunchTimeLabel.text
-            
-            
+            destinationVC.myTimer = myTimer
             
         }
     }

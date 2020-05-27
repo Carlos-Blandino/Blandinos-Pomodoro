@@ -28,7 +28,6 @@
                                 <inset key="contentEdgeInsets" minX="5" minY="45" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="25/10" backgroundImage="alarm" catalog="system"/>
                                 <connections>
-                                    <action selector="promodoroPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XsB-aU-wbw"/>
                                     <action selector="timerOnePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ObQ-Fv-z44"/>
                                 </connections>
                             </button>
@@ -40,7 +39,6 @@
                                 <inset key="contentEdgeInsets" minX="5" minY="44" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="25/10" backgroundImage="alarm" catalog="system"/>
                                 <connections>
-                                    <action selector="promodoroPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tsu-vy-Twh"/>
                                     <action selector="timerTwoPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="drk-ol-XAs"/>
                                 </connections>
                             </button>
@@ -52,7 +50,6 @@
                                 <inset key="contentEdgeInsets" minX="5" minY="45" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="25/10" backgroundImage="alarm" catalog="system"/>
                                 <connections>
-                                    <action selector="promodoroPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="unC-hD-dZx"/>
                                     <action selector="timerThreePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r9g-Ds-U4F"/>
                                 </connections>
                             </button>
@@ -64,7 +61,6 @@
                                 <inset key="contentEdgeInsets" minX="5" minY="45" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="25/10" backgroundImage="alarm" catalog="system"/>
                                 <connections>
-                                    <action selector="promodoroPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5A8-ta-hDt"/>
                                     <action selector="timerFourPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Avi-qR-ckN"/>
                                 </connections>
                             </button>

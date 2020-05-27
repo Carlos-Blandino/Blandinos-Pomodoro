@@ -10,7 +10,7 @@ import UIKit
 
 class PomodoroVC: UIViewController {
 
-    
+    var myTimer: TimerBrain?
     var timerOne: String?
     var breakOne: String?
     var timerTwo: String?
@@ -20,7 +20,7 @@ class PomodoroVC: UIViewController {
     var timerFour: String?
     var lunchBreak: String?
     var mainTime = Timer()
-    var timer: Int = 0
+    
     @IBOutlet weak var workTimeLabel: UILabel!
    
     
@@ -36,48 +36,33 @@ class PomodoroVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        timer = Int(timerOne!)! * Int(60)
+        myTimer!.timer = (myTimer?.timerOne!)! * Int(60)
         
         // Do any additional setup after loading the view.
-        timerOneButton.setTitle(timerOne! + "/" + breakOne!, for: .normal)
-        timerTwoButton.setTitle(timerTwo! + "/" + breakTwo!, for: .normal)
-        timerThreeButton.setTitle(timerThree! + "/" + breakThree!, for: .normal)
-        timerFourButton.setTitle(timerFour! + "/" + lunchBreak!, for: .normal)
-        workTimeLabel.text = timerOne! + ":00"
+        timerOneButton.setTitle("\(myTimer!.timerOne!)/\(myTimer!.breakOne!)", for: .normal)
+        timerTwoButton.setTitle("\(myTimer!.timerTwo!)/\(myTimer!.breakTwo!)", for: .normal)
+        timerThreeButton.setTitle("\(myTimer!.timerThree!)/\(myTimer!.breakThree!)", for: .normal)
+        timerFourButton.setTitle("\(myTimer!.timerFour!)/\(myTimer!.lunchBreak!)", for: .normal)
+        workTimeLabel.text = "\(myTimer!.timerOne!):00"
         startBreakButton.isHidden = true
     }
 
-    @IBAction func promodoroPressed(_ sender: UIButton) {
-        
-    }
-    
+
 
     @IBAction func timerOnePressed(_ sender: UIButton) {
         mainTime = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateWorkTime), userInfo: nil, repeats: true)
         
     }
     @objc func updateWorkTime(){
-        if timer != 0 {
-            
-            
-            var minutes = String(timer/60)
-            
-            var seconds = String(Int(timer) % 60)
-            
-            switch seconds {
-                
-            case "0","1","2","3","4","5","6","7","8","9":
-               seconds = "0" + seconds
-            default:
-                break
-            }
-            workTimeLabel.text = "\(minutes):\(seconds)"
-            
-             timer -= 1
+        if myTimer!.timer != 0 {
 
-            print(timer)
+        workTimeLabel.text = myTimer?.timeToString()
+            
         } else {
+            
             startBreakButton.isHidden  = false
+            
+            mainTime.invalidate()
         }
     }
     @IBAction func timerTwoPressed(_ sender: UIButton) {
