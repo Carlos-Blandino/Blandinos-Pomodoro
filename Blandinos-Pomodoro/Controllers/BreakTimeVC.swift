@@ -21,13 +21,13 @@ class BreakTimeVC: UIViewController {
         print(myBreakTimer.breakNumber)
         switch myBreakTimer.breakNumber {
         case 1:
-            breakDescriptionLabel.text = "First Break:"
+            breakDescriptionLabel.text = "Break 1:"
         case 2:
-            breakDescriptionLabel.text = "Second Break:"
+            breakDescriptionLabel.text = "Break 2:"
         case 3:
-            breakDescriptionLabel.text = "Third Break:"
+            breakDescriptionLabel.text = "Break 3:"
         case 4:
-            breakDescriptionLabel.text = "Lunch Break:"
+            breakDescriptionLabel.text = "Break 4:"
         default:
             break
         }
@@ -47,16 +47,6 @@ class BreakTimeVC: UIViewController {
         }
        
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     @IBAction func breaksOverPressed(_ sender: UIButton) {
       

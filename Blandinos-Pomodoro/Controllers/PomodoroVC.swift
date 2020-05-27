@@ -33,11 +33,12 @@ class PomodoroVC: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        print("view did load")
         resetView()
     }
  
     func resetView() {
+        myTimer!.breakTime = (myTimer?.breakOne!)! * Int(60)
+        myTimer!.timer = (myTimer?.timerOne!)! * Int(60)
         timerOneButton.isEnabled = true
         timerTwoButton.isEnabled = false
         timerThreeButton.isEnabled = false
@@ -47,7 +48,8 @@ class PomodoroVC: UIViewController {
            timerTwoButton.setTitle("\(myTimer!.timerTwo!)/\(myTimer!.breakTwo!)", for: .normal)
            timerThreeButton.setTitle("\(myTimer!.timerThree!)/\(myTimer!.breakThree!)", for: .normal)
            timerFourButton.setTitle("\(myTimer!.timerFour!)/\(myTimer!.lunchBreak!)", for: .normal)
-           workTimeLabel.text = "\(myTimer!.timerOne!):00"
+        workTimeLabel.text = myTimer?.timeToString(typeOfTime: "work")
+          // workTimeLabel.text = "\(myTimer!.timerOne!):00"
         startBreakButton.isEnabled = false
         myTimer?.breakNumber = 0
         timerDescriptionLabel.text = "Timer 1:"
@@ -74,8 +76,6 @@ class PomodoroVC: UIViewController {
         } else {
 
 
-           //check if break is over from the last segue
-
             startBreakButton.isEnabled  = true
 
             mainTime.invalidate()
@@ -87,7 +87,7 @@ class PomodoroVC: UIViewController {
             mainTime.invalidate()
         } else {
             myTimer!.breakTime = (myTimer?.breakTwo!)! * Int(60)
-            myTimer!.timer = (myTimer?.timerOne!)! * Int(60)
+            myTimer!.timer = (myTimer?.timerTwo!)! * Int(60)
             mainTime = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateWorkTime), userInfo: nil, repeats: true)
             myTimer?.breakNumber = 2
         }
@@ -99,7 +99,7 @@ class PomodoroVC: UIViewController {
             mainTime.invalidate()
         } else {
             myTimer!.breakTime = (myTimer?.breakThree!)! * Int(60)
-            myTimer!.timer = (myTimer?.timerOne!)! * Int(60)
+            myTimer!.timer = (myTimer?.timerThree!)! * Int(60)
             mainTime = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateWorkTime), userInfo: nil, repeats: true)
             myTimer?.breakNumber = 3
         }
@@ -111,7 +111,7 @@ class PomodoroVC: UIViewController {
             mainTime.invalidate()
         } else {
             myTimer!.breakTime = (myTimer?.lunchBreak!)! * Int(60)
-            myTimer!.timer = (myTimer?.timerOne!)! * Int(60)
+            myTimer!.timer = (myTimer?.timerFour!)! * Int(60)
             mainTime = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateWorkTime), userInfo: nil, repeats: true)
             myTimer?.breakNumber = 4
         }
@@ -123,28 +123,28 @@ class PomodoroVC: UIViewController {
         performSegue(withIdentifier: "breakTimeVCSeque", sender: self)
         switch myTimer!.breakNumber {
         case 1:
-            timerDescriptionLabel.text = "Timer 1:"
+            timerDescriptionLabel.text = "Timer 2:"
             timerOneButton.isEnabled = false
             timerTwoButton.isEnabled = true
             timerThreeButton.isEnabled = false
             timerFourButton.isEnabled = false
             workTimeLabel.text = "\(myTimer!.timerOne!):00"
         case 2:
-            timerDescriptionLabel.text = "Timer 2:"
+            timerDescriptionLabel.text = "Timer 3:"
             timerOneButton.isEnabled = false
             timerTwoButton.isEnabled = false
             timerThreeButton.isEnabled = true
             timerFourButton.isEnabled = false
             workTimeLabel.text = "\(myTimer!.timerTwo!):00"
         case 3:
-            timerDescriptionLabel.text = "Timer 3:"
+            timerDescriptionLabel.text = "Timer 4:"
             timerOneButton.isEnabled = false
             timerTwoButton.isEnabled = false
             timerThreeButton.isEnabled = false
             timerFourButton.isEnabled = true
             workTimeLabel.text = "\(myTimer!.timerThree!):00"
         case 4:
-            timerDescriptionLabel.text = "Timer 4:"
+            timerDescriptionLabel.text = "Timer 1:"
             timerOneButton.isEnabled = true
             timerTwoButton.isEnabled = false
             timerThreeButton.isEnabled = false

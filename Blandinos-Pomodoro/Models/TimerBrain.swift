@@ -27,7 +27,7 @@ struct TimerBrain {
         if typeOfTime == "work" {
         if timer > 0 {
                 
-                let minutes = String(timer/60)
+                var minutes = String(timer/60)
                 
                 var seconds = String(Int(timer) % 60)
                 
@@ -38,6 +38,13 @@ struct TimerBrain {
                 default:
                     break
                 }
+            switch minutes {
+                
+            case "0","1","2","3","4","5","6","7","8","9":
+                minutes = "0" + minutes
+            default:
+                break
+            }
                 resultStr = "\(minutes):\(seconds)"
                 
                 timer -= 1
