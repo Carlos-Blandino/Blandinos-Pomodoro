@@ -25,7 +25,7 @@ struct TimerBrain {
     mutating func timeToString(typeOfTime: String) -> String {
         var resultStr = ""
         if typeOfTime == "work" {
-        if timer > 0 {
+            if timer > 0 {
                 
                 var minutes = String(timer/60)
                 
@@ -38,13 +38,13 @@ struct TimerBrain {
                 default:
                     break
                 }
-            switch minutes {
-                
-            case "0","1","2","3","4","5","6","7","8","9":
-                minutes = "0" + minutes
-            default:
-                break
-            }
+                switch minutes {
+                    
+                case "0","1","2","3","4","5","6","7","8","9":
+                    minutes = "0" + minutes
+                default:
+                    break
+                }
                 resultStr = "\(minutes):\(seconds)"
                 
                 timer -= 1
@@ -53,7 +53,7 @@ struct TimerBrain {
             
             if breakTime != 0 {
                 
-                let minutes = String(breakTime/60)
+                var minutes = String(breakTime/60)
                 
                 var seconds = String(Int(breakTime) % 60)
                 
@@ -64,6 +64,15 @@ struct TimerBrain {
                 default:
                     break
                 }
+                
+                switch minutes {
+                    
+                case "0","1","2","3","4","5","6","7","8","9":
+                    minutes = "0" + minutes
+                default:
+                    break
+                }
+                
                 resultStr = "\(minutes):\(seconds)"
                 
                 breakTime -= 1

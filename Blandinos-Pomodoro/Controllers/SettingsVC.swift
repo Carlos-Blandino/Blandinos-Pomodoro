@@ -31,18 +31,18 @@ class SettingsVC: UIViewController {
     
     
     @IBOutlet weak var lunchTimeSlider: UISlider!
-
+    
     @IBOutlet weak var workTimeOneSlider: UISlider!
     @IBOutlet weak var workTimeTwoSlider: UISlider!
     @IBOutlet weak var workTimeThreeSlider: UISlider!
     @IBOutlet weak var workTimeFourSlider: UISlider!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         
-       
+        
     }
     
     
@@ -61,22 +61,22 @@ class SettingsVC: UIViewController {
     @IBAction func breakTimeChange(_ sender: UISlider) {
         breakThreeTimeLabel.text = "\(Int(breakThreeTimeSlider.value))"
         breakTwoTimeLabel.text = "\(Int(breakTwoTimeSlider.value))"
-     breakOneTimeLabel.text = "\(Int(breakOneTimeSlider.value))"
+        breakOneTimeLabel.text = "\(Int(breakOneTimeSlider.value))"
     }
     
     @IBAction func lunchTimeChange(_ sender: UISlider) {
         lunchTimeLabel.text =  "\(Int(lunchTimeSlider.value))"
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
     @IBAction func doneButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "pomodoroVCSegue", sender: self)
     }

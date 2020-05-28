@@ -27,7 +27,7 @@ class BreakTimeVC: UIViewController {
         case 3:
             breakDescriptionLabel.text = "Break 3:"
         case 4:
-            breakDescriptionLabel.text = "Break 4:"
+            breakDescriptionLabel.text = "Lunch:"
         default:
             break
         }
