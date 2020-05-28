@@ -17,18 +17,15 @@ class SettingsVC: UIViewController {
     @IBOutlet weak var breakOneTimeLabel: UILabel!
     @IBOutlet weak var breakTwoTimeLabel: UILabel!
     @IBOutlet weak var breakThreeTimeLabel: UILabel!
-    
-    
+
     @IBOutlet weak var workTimeOneLabel: UILabel!
     @IBOutlet weak var workTimeTwoLabel: UILabel!
     @IBOutlet weak var workTimeThreeLabel: UILabel!
     @IBOutlet weak var workTimeFourLabel: UILabel!
     
-    
     @IBOutlet weak var breakOneTimeSlider: UISlider!
     @IBOutlet weak var breakTwoTimeSlider: UISlider!
     @IBOutlet weak var breakThreeTimeSlider: UISlider!
-    
     
     @IBOutlet weak var lunchTimeSlider: UISlider!
     
@@ -38,18 +35,12 @@ class SettingsVC: UIViewController {
     @IBOutlet weak var workTimeFourSlider: UISlider!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-        
-        
-        
     }
     
     
     
     
     @IBAction func workTimeChange(_ sender: UISlider) {
-        //String(format: "%.2f", workTimeSlider.value) to have 2 decimal places but for now we use none
         workTimeFourLabel.text = "\(Int(workTimeFourSlider.value))"
         workTimeThreeLabel.text = "\(Int(workTimeThreeSlider.value))"
         workTimeTwoLabel.text = "\(Int(workTimeTwoSlider.value))"

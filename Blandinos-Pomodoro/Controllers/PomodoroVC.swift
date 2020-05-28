@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import AVFoundation
 
 class PomodoroVC: UIViewController {
+    
+    var player = AVAudioPlayer()
     
     var myTimer: TimerBrain?
     
@@ -34,6 +37,7 @@ class PomodoroVC: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
         resetView()
     }
     
@@ -97,13 +101,18 @@ class PomodoroVC: UIViewController {
     }
     
     @objc func updateWorkTime(){
-           if myTimer!.timer >= 0 {
-               workTimeLabel.text = myTimer?.timeToString(typeOfTime: "work")
-           } else {
-               startBreakButton.isEnabled  = true
-               mainTime.invalidate()
-           }
-       }
+        if myTimer!.timer >= 0 {
+            workTimeLabel.text = myTimer?.timeToString(typeOfTime: "work")
+            if myTimer?.timer == 0 {
+                playAlarm()
+            }
+        } else {
+            startBreakButton.isEnabled  = true
+            mainTime.invalidate()
+        }
+    }
+    
+    
     @IBAction func startBreakPressed(_ sender: UIButton) {
         buttonState = false
         performSegue(withIdentifier: "breakTimeVCSeque", sender: self)
@@ -151,7 +160,24 @@ class PomodoroVC: UIViewController {
         startBreakButton.isEnabled = false
     }
     
-    
+    func playAlarm() {
+        let url = Bundle.main.url(forResource: "alarms_sound", withExtension: "mp3")
+
+        if let goodUrl = url {
+            do {
+                player = try AVAudioPlayer(contentsOf: goodUrl)
+                player.play()
+            } catch {
+                print("something went wrong with audio player")
+            }
+        } else {
+            print("something went wrong with audio file")
+        }
+
+        
+
+        
+    }
     @IBAction func unwindFromStartBreakVC(storyboard: UIStoryboardSegue){
         
     }

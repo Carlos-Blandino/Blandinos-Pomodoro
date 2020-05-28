@@ -15,6 +15,7 @@
 		0735BB79246E21C400BAA665 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0735BB77246E21C400BAA665 /* LaunchScreen.storyboard */; };
 		078CB10A247A10200038FB9F /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078CB109247A10200038FB9F /* SettingsVC.swift */; };
 		079EE414247D70C800FDC65A /* BreakTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079EE413247D70C800FDC65A /* BreakTimeVC.swift */; };
+		07CA70A724802F6400BA71F3 /* alarms_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 07CA70A624802F6400BA71F3 /* alarms_sound.mp3 */; };
 		07F08C10247EB614003A5A2D /* TimerBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F08C0F247EB614003A5A2D /* TimerBrain.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		0735BB7A246E21C400BAA665 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		078CB109247A10200038FB9F /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		079EE413247D70C800FDC65A /* BreakTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakTimeVC.swift; sourceTree = "<group>"; };
+		07CA70A624802F6400BA71F3 /* alarms_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarms_sound.mp3; sourceTree = "<group>"; };
 		07F08C0F247EB614003A5A2D /* TimerBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +70,7 @@
 				079EE410247CB8B600FDC65A /* Views */,
 				079EE411247CB8E500FDC65A /* Controllers */,
 				0735BB75246E21C400BAA665 /* Assets.xcassets */,
+				07CA70A624802F6400BA71F3 /* alarms_sound.mp3 */,
 				0735BB77246E21C400BAA665 /* LaunchScreen.storyboard */,
 				0735BB7A246E21C400BAA665 /* Info.plist */,
 			);
@@ -160,6 +163,7 @@
 			files = (
 				0735BB79246E21C400BAA665 /* LaunchScreen.storyboard in Resources */,
 				0735BB76246E21C400BAA665 /* Assets.xcassets in Resources */,
+				07CA70A724802F6400BA71F3 /* alarms_sound.mp3 in Resources */,
 				0735BB74246E21C200BAA665 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

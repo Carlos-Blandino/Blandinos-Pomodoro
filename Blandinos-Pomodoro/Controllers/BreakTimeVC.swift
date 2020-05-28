@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import AVFoundation
 
 class BreakTimeVC: UIViewController {
+    var player = AVAudioPlayer()
     var myBreakTimer = TimerBrain()
     @IBOutlet weak var breaksOverButton: UIButton!
     @IBOutlet weak var breakTimeLabel: UILabel!
@@ -39,6 +41,9 @@ class BreakTimeVC: UIViewController {
     @objc func updateWorkTime() {
         if myBreakTimer.breakTime >= 0 {
             breakTimeLabel.text =  myBreakTimer.timeToString(typeOfTime: "break")
+            if myBreakTimer.breakTime == 0 {
+                playAlarm()
+            }
         } else {
             breaksOverButton.isEnabled  = true
             
@@ -47,6 +52,21 @@ class BreakTimeVC: UIViewController {
         
     }
     
+    func playAlarm() {
+        
+        let url = Bundle.main.url(forResource: "alarms_sound", withExtension: "mp3")
+        
+        if let goodUrl = url {
+            do {
+                player = try AVAudioPlayer(contentsOf: goodUrl)
+                player.play()
+            } catch {
+                print("something went wrong with audio player")
+            }
+        } else {
+            print("something went wrong with audio file")
+        }
+    }
     @IBAction func breaksOverPressed(_ sender: UIButton) {
         
         self.dismiss(animated: true, completion: nil)
