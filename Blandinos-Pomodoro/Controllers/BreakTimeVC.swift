@@ -14,11 +14,10 @@ class BreakTimeVC: UIViewController {
     @IBOutlet weak var breakTimeLabel: UILabel!
     @IBOutlet weak var breakDescriptionLabel: UILabel!
     var mainTime = Timer()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(myBreakTimer.breakNumber)
         switch myBreakTimer.breakNumber {
         case 1:
             breakDescriptionLabel.text = "Break 1:"
@@ -32,24 +31,24 @@ class BreakTimeVC: UIViewController {
             break
         }
         breaksOverButton.isEnabled = false
-       mainTime = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateWorkTime), userInfo: nil, repeats: true)
-      
+        mainTime = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateWorkTime), userInfo: nil, repeats: true)
+        
         
         // Do any additional setup after loading the view.
     }
     @objc func updateWorkTime() {
         if myBreakTimer.breakTime != 0 {
-             breakTimeLabel.text =  myBreakTimer.timeToString(typeOfTime: "break")
+            breakTimeLabel.text =  myBreakTimer.timeToString(typeOfTime: "break")
         } else {
             breaksOverButton.isEnabled  = true
-
-        mainTime.invalidate()
+            
+            mainTime.invalidate()
         }
-       
+        
     }
     
     @IBAction func breaksOverPressed(_ sender: UIButton) {
-      
+        
         self.dismiss(animated: true, completion: nil)
     }
 }

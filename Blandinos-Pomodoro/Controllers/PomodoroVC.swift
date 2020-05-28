@@ -14,6 +14,7 @@ class PomodoroVC: UIViewController {
     
     var mainTime = Timer()
     
+    var buttonState = false
     
     @IBOutlet weak var timerDescriptionLabel: UILabel!
     
@@ -55,14 +56,18 @@ class PomodoroVC: UIViewController {
     }
     
     @IBAction func timerOnePressed(_ sender: UIButton) {
-        if mainTime.isValid {
-            mainTime.invalidate()
-        } else {
+        if buttonState == false {
             myTimer!.breakTime = (myTimer?.breakOne!)! * Int(60)
-            myTimer!.timer = (myTimer?.timerOne!)! * Int(60)
-            mainTime = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateWorkTime), userInfo: nil, repeats: true)
-            myTimer?.breakNumber = 1
+                       myTimer!.timer = (myTimer?.timerOne!)! * Int(60)
+                       mainTime = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateWorkTime), userInfo: nil, repeats: true)
+                       myTimer?.breakNumber = 1
+            buttonState = true
         }
+//        if mainTime.isValid {
+//            mainTime.invalidate()
+//        } else {
+//
+//        }
         
         
     }
@@ -75,43 +80,53 @@ class PomodoroVC: UIViewController {
         }
     }
     @IBAction func timerTwoPressed(_ sender: UIButton) {
-        if mainTime.isValid {
-            mainTime.invalidate()
-        } else {
+        if buttonState == false {
             myTimer!.breakTime = (myTimer?.breakTwo!)! * Int(60)
             myTimer!.timer = (myTimer?.timerTwo!)! * Int(60)
             mainTime = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateWorkTime), userInfo: nil, repeats: true)
             myTimer?.breakNumber = 2
         }
+//        if mainTime.isValid {
+//            mainTime.invalidate()
+//        } else {
+//
+//        }
         
     }
     
     @IBAction func timerThreePressed(_ sender: UIButton) {
-        if mainTime.isValid {
-            mainTime.invalidate()
-        } else {
+        if buttonState == false {
             myTimer!.breakTime = (myTimer?.breakThree!)! * Int(60)
-            myTimer!.timer = (myTimer?.timerThree!)! * Int(60)
-            mainTime = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateWorkTime), userInfo: nil, repeats: true)
-            myTimer?.breakNumber = 3
+                       myTimer!.timer = (myTimer?.timerThree!)! * Int(60)
+                       mainTime = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateWorkTime), userInfo: nil, repeats: true)
+                       myTimer?.breakNumber = 3
         }
+//        if mainTime.isValid {
+//            mainTime.invalidate()
+//        } else {
+//
+//        }
         
     }
     
     @IBAction func timerFourPressed(_ sender: UIButton) {
-        if mainTime.isValid {
-            mainTime.invalidate()
-        } else {
+        if buttonState == false {
             myTimer!.breakTime = (myTimer?.lunchBreak!)! * Int(60)
             myTimer!.timer = (myTimer?.timerFour!)! * Int(60)
             mainTime = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateWorkTime), userInfo: nil, repeats: true)
             myTimer?.breakNumber = 4
         }
+//        if mainTime.isValid {
+//            mainTime.invalidate()
+//        } else {
+//            
+//        }
         
         
     }
     
     @IBAction func startBreakPressed(_ sender: UIButton) {
+        buttonState = false
         performSegue(withIdentifier: "breakTimeVCSeque", sender: self)
         switch myTimer!.breakNumber {
         case 1:
