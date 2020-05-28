@@ -16,6 +16,7 @@
 		078CB10A247A10200038FB9F /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078CB109247A10200038FB9F /* SettingsVC.swift */; };
 		079EE414247D70C800FDC65A /* BreakTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079EE413247D70C800FDC65A /* BreakTimeVC.swift */; };
 		07CA70A724802F6400BA71F3 /* alarms_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 07CA70A624802F6400BA71F3 /* alarms_sound.mp3 */; };
+		07CA70A92480533C00BA71F3 /* resetUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CA70A82480533C00BA71F3 /* resetUIButton.swift */; };
 		07F08C10247EB614003A5A2D /* TimerBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F08C0F247EB614003A5A2D /* TimerBrain.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		078CB109247A10200038FB9F /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		079EE413247D70C800FDC65A /* BreakTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakTimeVC.swift; sourceTree = "<group>"; };
 		07CA70A624802F6400BA71F3 /* alarms_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarms_sound.mp3; sourceTree = "<group>"; };
+		07CA70A82480533C00BA71F3 /* resetUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resetUIButton.swift; sourceTree = "<group>"; };
 		07F08C0F247EB614003A5A2D /* TimerBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				07F08C0F247EB614003A5A2D /* TimerBrain.swift */,
+				07CA70A82480533C00BA71F3 /* resetUIButton.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				0735BB71246E21C200BAA665 /* PomodoroVC.swift in Sources */,
 				078CB10A247A10200038FB9F /* SettingsVC.swift in Sources */,
 				07F08C10247EB614003A5A2D /* TimerBrain.swift in Sources */,
+				07CA70A92480533C00BA71F3 /* resetUIButton.swift in Sources */,
 				0735BB6D246E21C200BAA665 /* AppDelegate.swift in Sources */,
 				0735BB6F246E21C200BAA665 /* SceneDelegate.swift in Sources */,
 				079EE414247D70C800FDC65A /* BreakTimeVC.swift in Sources */,

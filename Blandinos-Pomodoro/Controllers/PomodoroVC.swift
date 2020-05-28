@@ -42,6 +42,7 @@ class PomodoroVC: UIViewController {
     }
     
     func resetView() {
+        
         myTimer!.breakTime = (myTimer?.breakOne!)! * Int(60)
         myTimer!.timer = (myTimer?.timerOne!)! * Int(60)
         timerOneButton.isEnabled = true
@@ -54,9 +55,12 @@ class PomodoroVC: UIViewController {
         timerThreeButton.setTitle("\(myTimer!.timerThree!)/\(myTimer!.breakThree!)", for: .normal)
         timerFourButton.setTitle("\(myTimer!.timerFour!)/\(myTimer!.lunchBreak!)", for: .normal)
         workTimeLabel.text = myTimer?.timeToString(typeOfTime: "work")
-        startBreakButton.isEnabled = false
+        //startBreakButton.isEnabled = false
+        startBreakButton.isHidden = true
         myTimer?.breakNumber = 0
         timerDescriptionLabel.text = "Timer 1:"
+        
+        
     }
     
     @IBAction func timerOnePressed(_ sender: UIButton) {
@@ -107,7 +111,8 @@ class PomodoroVC: UIViewController {
                 playAlarm()
             }
         } else {
-            startBreakButton.isEnabled  = true
+            //startBreakButton.isEnabled  = true
+            startBreakButton.isHidden = false
             mainTime.invalidate()
         }
     }
@@ -157,7 +162,8 @@ class PomodoroVC: UIViewController {
             break
         }
         
-        startBreakButton.isEnabled = false
+        //startBreakButton.isEnabled = false
+        startBreakButton.isHidden = true
     }
     
     func playAlarm() {
@@ -173,11 +179,18 @@ class PomodoroVC: UIViewController {
         } else {
             print("something went wrong with audio file")
         }
-
+    }
+    
+    @IBAction func reset(_ sender: UIButton) {
         
-
+        if buttonState == true {
+            mainTime.invalidate()
+            resetView()
+            buttonState = false
+        }
         
     }
+    
     @IBAction func unwindFromStartBreakVC(storyboard: UIStoryboardSegue){
         
     }
