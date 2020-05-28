@@ -36,19 +36,14 @@ class SettingsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    
-    
-    
+   
     @IBAction func workTimeChange(_ sender: UISlider) {
         workTimeFourLabel.text = "\(Int(workTimeFourSlider.value))"
         workTimeThreeLabel.text = "\(Int(workTimeThreeSlider.value))"
         workTimeTwoLabel.text = "\(Int(workTimeTwoSlider.value))"
         workTimeOneLabel.text = "\(Int(workTimeOneSlider.value))"
     }
-    
-    
-    
+ 
     @IBAction func breakTimeChange(_ sender: UISlider) {
         breakThreeTimeLabel.text = "\(Int(breakThreeTimeSlider.value))"
         breakTwoTimeLabel.text = "\(Int(breakTwoTimeSlider.value))"
@@ -58,15 +53,6 @@ class SettingsVC: UIViewController {
     @IBAction func lunchTimeChange(_ sender: UISlider) {
         lunchTimeLabel.text =  "\(Int(lunchTimeSlider.value))"
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
     @IBAction func doneButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "pomodoroVCSegue", sender: self)

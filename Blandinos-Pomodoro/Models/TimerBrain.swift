@@ -10,7 +10,7 @@ import Foundation
 
 struct TimerBrain {
     
-    var timer: Int = 0
+    var workTime: Int = 0
     var breakTime: Int = 0
     var timerOne: Int?
     var breakOne: Int?
@@ -25,11 +25,11 @@ struct TimerBrain {
     mutating func timeToString(typeOfTime: String) -> String {
         var resultStr = ""
         if typeOfTime == "work" {
-            if timer >= 0 {
+            if workTime >= 0 {
                 
-                var minutes = String(timer/60)
+                var minutes = String(workTime/60)
                 
-                var seconds = String(Int(timer) % 60)
+                var seconds = String(Int(workTime) % 60)
                 
                 switch seconds {
                     
@@ -47,7 +47,7 @@ struct TimerBrain {
                 }
                 resultStr = "\(minutes):\(seconds)"
                 
-                timer -= 1
+                workTime -= 1
             }
         } else if typeOfTime == "break" {
             
@@ -77,9 +77,7 @@ struct TimerBrain {
                 
                 breakTime -= 1
             }
-            
         }
-        
         return resultStr
     }
 }
