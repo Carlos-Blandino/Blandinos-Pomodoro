@@ -37,7 +37,7 @@ class BreakTimeVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     @objc func updateWorkTime() {
-        if myBreakTimer.breakTime != 0 {
+        if myBreakTimer.breakTime >= 0 {
             breakTimeLabel.text =  myBreakTimer.timeToString(typeOfTime: "break")
         } else {
             breaksOverButton.isEnabled  = true
