@@ -37,21 +37,26 @@ class PomodoroVC: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+        timerOneButton.setTitle("T1-\(myTimer!.timerOne!)/\(myTimer!.breakOne!)", for: .normal)
+        timerTwoButton.setTitle("T2-\(myTimer!.timerTwo!)/\(myTimer!.breakTwo!)", for: .normal)
+        timerThreeButton.setTitle("T3-\(myTimer!.timerThree!)/\(myTimer!.breakThree!)", for: .normal)
+        timerFourButton.setTitle("T4-\(myTimer!.timerFour!)/\(myTimer!.lunchBreak!)", for: .normal)
         resetView()
+        timerOneButton.isEnabled = true
+        timerTwoButton.isEnabled = false
+        timerThreeButton.isEnabled = false
+        timerFourButton.isEnabled = false
     }
     
+    @IBAction func backToSettings(_ sender: UIButton) {
+        mainTime.invalidate()
+    }
     func resetView() {
        
         timerOneButton.isEnabled = true
         timerTwoButton.isEnabled = true
         timerThreeButton.isEnabled = true
         timerFourButton.isEnabled = true
-        
-        timerOneButton.setTitle("T1-\(myTimer!.timerOne!)/\(myTimer!.breakOne!)", for: .normal)
-        timerTwoButton.setTitle("T2-\(myTimer!.timerTwo!)/\(myTimer!.breakTwo!)", for: .normal)
-        timerThreeButton.setTitle("T3-\(myTimer!.timerThree!)/\(myTimer!.breakThree!)", for: .normal)
-        timerFourButton.setTitle("T4-\(myTimer!.timerFour!)/\(myTimer!.lunchBreak!)", for: .normal)
         workTimeLabel.text = "00:00" 
         startBreakButton.isHidden = true
         myTimer?.breakNumber = 0

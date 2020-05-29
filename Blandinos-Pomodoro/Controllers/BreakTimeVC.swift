@@ -28,12 +28,16 @@ class BreakTimeVC: UIViewController {
         case 3:
             breakDescriptionLabel.text = "Break 3:"
         case 4:
-            breakDescriptionLabel.text = "Lunch:"
+            breakDescriptionLabel.text = "Break 4:"
         default:
             break
         }
         breaksOverButton.isHidden = true
         mainTime = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateWorkTime), userInfo: nil, repeats: true)
+    }
+    
+    @IBAction func backToPomodoroPressed(_ sender: UIButton) {
+        mainTime.invalidate()
     }
     @objc func updateWorkTime() {
         if myBreakTimer.breakTime >= 0 {
