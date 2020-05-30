@@ -32,7 +32,8 @@ class BreakTimeVC: UIViewController {
         default:
             break
         }
-        breaksOverButton.isHidden = true
+        breaksOverButton.isHidden = false
+        breaksOverButton.isEnabled = false
         mainTime = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateWorkTime), userInfo: nil, repeats: true)
     }
     
@@ -46,7 +47,7 @@ class BreakTimeVC: UIViewController {
                 playAlarm()
             }
         } else {
-            breaksOverButton.isHidden = false
+            breaksOverButton.isEnabled = true
             mainTime.invalidate()
         }
         
