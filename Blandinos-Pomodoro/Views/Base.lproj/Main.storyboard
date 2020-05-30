@@ -26,7 +26,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8Xy-Fc-994" userLabel="Title Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="110"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XJj-hJ-LAu">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XJj-hJ-LAu" userLabel="2 Lines txt Stack View">
                                                 <rect key="frame" x="32" y="0.0" width="320" height="110"/>
                                                 <subviews>
                                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yX7-bS-aiA" userLabel="titleView">

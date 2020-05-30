@@ -12,7 +12,7 @@ class SettingsVC: UIViewController {
     var myTimer = TimerBrain()
     
     @IBOutlet weak var lunchTimeLabel: UILabel!
-    
+     
     
     @IBOutlet weak var breakOneTimeLabel: UILabel!
     @IBOutlet weak var breakTwoTimeLabel: UILabel!
@@ -43,7 +43,7 @@ class SettingsVC: UIViewController {
         workTimeTwoLabel.text = "\(Int(workTimeTwoSlider.value))"
         workTimeOneLabel.text = "\(Int(workTimeOneSlider.value))"
     }
- 
+   
     @IBAction func breakTimeChange(_ sender: UISlider) {
         breakThreeTimeLabel.text = "\(Int(breakThreeTimeSlider.value))"
         breakTwoTimeLabel.text = "\(Int(breakTwoTimeSlider.value))"
@@ -77,7 +77,7 @@ class SettingsVC: UIViewController {
         if segue.identifier == "pomodoroVCSegue" {
             let destinationVC = segue.destination as! PomodoroVC
             destinationVC.myTimer = myTimer
-            
+           
         }
     }
 }

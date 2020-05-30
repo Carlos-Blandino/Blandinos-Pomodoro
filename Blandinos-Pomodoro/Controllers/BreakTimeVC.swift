@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 
 class BreakTimeVC: UIViewController {
+    
     var player = AVAudioPlayer()
     var myBreakTimer = TimerBrain()
     @IBOutlet weak var breaksOverButton: UIButton!
@@ -35,6 +36,8 @@ class BreakTimeVC: UIViewController {
         breaksOverButton.isHidden = false
         breaksOverButton.isEnabled = false
         mainTime = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateWorkTime), userInfo: nil, repeats: true)
+        UIApplication.shared.isIdleTimerDisabled = true
+
     }
     
     @IBAction func backToPomodoroPressed(_ sender: UIButton) {
@@ -48,6 +51,8 @@ class BreakTimeVC: UIViewController {
             }
         } else {
             breaksOverButton.isEnabled = true
+            UIApplication.shared.isIdleTimerDisabled = false
+
             mainTime.invalidate()
         }
         

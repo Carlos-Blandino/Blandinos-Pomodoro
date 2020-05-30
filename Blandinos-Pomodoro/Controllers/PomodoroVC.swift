@@ -75,6 +75,8 @@ class PomodoroVC: UIViewController {
             timerThreeButton.isEnabled = false
             timerFourButton.isEnabled = false
             timerDescriptionLabel.text = "Timer 1:"
+            UIApplication.shared.isIdleTimerDisabled = true
+
         }
     }
    
@@ -90,6 +92,7 @@ class PomodoroVC: UIViewController {
             timerThreeButton.isEnabled = false
             timerFourButton.isEnabled = false
             timerDescriptionLabel.text = "Timer 2:"
+            UIApplication.shared.isIdleTimerDisabled = true
         }
     }
     
@@ -105,6 +108,7 @@ class PomodoroVC: UIViewController {
             timerThreeButton.isEnabled = true
             timerFourButton.isEnabled = false
             timerDescriptionLabel.text = "Timer 3:"
+            UIApplication.shared.isIdleTimerDisabled = true
         }
     }
     
@@ -120,6 +124,7 @@ class PomodoroVC: UIViewController {
             timerThreeButton.isEnabled = false
             timerFourButton.isEnabled = true
             timerDescriptionLabel.text = "Timer 4:"
+            UIApplication.shared.isIdleTimerDisabled = true
         }
     }
     
@@ -132,12 +137,14 @@ class PomodoroVC: UIViewController {
         } else {
             //startBreakButton.isEnabled  = true
             startBreakButton.isHidden = false
+            UIApplication.shared.isIdleTimerDisabled = false
             mainTime.invalidate()
         }
     }
     
     
     @IBAction func startBreakPressed(_ sender: UIButton) {
+
         buttonState = false
         performSegue(withIdentifier: "breakTimeVCSeque", sender: self)
         switch myTimer!.breakNumber {
@@ -182,7 +189,6 @@ class PomodoroVC: UIViewController {
             break
         }
         
-        //startBreakButton.isEnabled = false
         startBreakButton.isHidden = true
     }
     
